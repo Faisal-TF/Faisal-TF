@@ -1,119 +1,75 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<title>Input > Background Color</title>
 	<style>
 	body {
-		background-image: url("http://www.filmlb.com/wp-content/uploads/2015/02/STE-1.jpg");
-		background-size:cover;
+		transition:1s;
+		background-color:pink;
 	}
-
-	#ship
-	{
-		width: 1500px;
-		height: 1000px;
-		position: fixed;
-		z-index:-10;
-		background-image: url(https://upload.wikimedia.org/wikipedia/commons/4/4a/Gokstad-ship-model-transparent-background.png);
-		background-repeat: no-repeat;
-		background-size: contain;
-		animation-name: jump;
-		animation-duration: 2s;
-		animation-iteration-count: infinite;
-	}
-
-	#dancingman
-	{
-		width: 300px;
-		height: 600px;
-		background-image: url(dancingGif1.gif);
-		background-size: contain;
-		background-repeat: no-repeat;
-		position: absolute;
-		top: 300px;
-		left: 800px;
-		animation-name: color, jump;
-		animation-iteration-count: infinite, infinite;
-		animation-duration: 2s, 2s;
-	}
-
-	@keyframes jump{
-		25% { transform: rotate(30deg); }
-		75% { transform: rotate(-30deg); }
-	}
-		@keyframes rotating{
-		25% { transform: rotate(30deg); }
-		40% {transform: rotate(15deg);}
-		60% {transform: rotate(-15deg);}
-		75% { transform: rotate(-30deg); }
-	}
-	@keyframes dance{
-		25% {transform: translateX(40px)}
-		50% {transform: translateX(-40px)}
-		75% {transform: translateX(-40px)}
-		100% {transform: translateX(40px)}
-	}
-
-	#spoderman
-	{
-		width: 400px;
-		height: 500px;
-		background-image: url(spoderman.gif);
-		background-size:contain;
-		background-repeat: no-repeat;
-		position: absolute;
-		top: 350px;
-		left: 250px;
-		animation-name: movearound;
-		animation-iteration-count: infinite;
-		animation-duration: 1s;
-	}
-	@keyframes movearound{
-		8% { transform: translateY(-40px); }
-		15% {transform: translateY(-40px);}
-		20% {transform: translateX(30px);}
-		25% {transform: translateY(30px);}
-		40% {transform: translateX(-60px);}
-		60% {transform: translateY(50px)}
-		100% {transform:translateX(30px);}
-
-	}
-
-    @keyframes color{
-    	0% {-webkit-filter:hue-rotate(50deg);}
-    	10% {-webkit-filter:hue-rotate(100deg);}
-    	20% {-webkit-filter:hue-rotate(150deg);}
-    	30% {-webkit-filter:hue-rotate(200deg);}
-    	40% {-webkit-filter:hue-rotate(250deg);}
-    	50% {-webkit-filter:hue-rotate(300deg);}
-    	60% {-webkit-filter:hue-rotate(350deg)}
-    	70% {-webkit-filter:hue-rotate(400deg)}
-    	80% {-webkit-filter:hue-rotate(450deg)}
-    	90% {-webkit-filter:hue-rotate(500deg)}
-    	100% {-webkit-filter:hue-rotate(600deg)}
-   }
-	#datBoi
-	{
-		width: 300px;
-		height: 400px;
-		background-image: url(giphy.gif);
-		position: absolute;
-		top: 350px;
-		left: 550px;
-		animation-name: jump;
-		animation-iteration-count: infinite;
-		animation-duration: 1.5s;
-	}
-
 	</style>
 </head>
 <body>
-<audio src="Famous.mp3" autoplay> </audio>
-<div id="ship"></div>
-<backgorund-image src="https://newevolutiondesigns.com/images/freebies/galaxy-wallpaper-36.jpg">
-<div id="dancingman"></div>
-<div id="spoderman"></div>
-<div id="datBoi"></div>
+
 <script>
+// This global variable will make the current value of "input" accessible ANYWHERE in your program.
+var input;
+function generateInput() {
+	navigator.getBattery().then(function(battery) {
+  function updateAllBatteryInfo(){
+    updateChargeInfo();
+    updateLevelInfo();
+    updateChargingInfo();
+    updateDischargingInfo();
+  }
+  updateAllBatteryInfo();
+
+  battery.addEventListener('chargingchange', function(){
+    updateChargeInfo();
+  });
+  function updateChargeInfo(){
+    console.log("Battery charging? "
+                + (battery.charging ? "Yes" : "No"));
+  }
+
+  battery.addEventListener('levelchange', function(){
+    updateLevelInfo();
+  });
+  function updateLevelInfo(){
+    console.log("Battery level: "
+                + battery.level + "%");
+    input = battery.level;
+  }
+
+  battery.addEventListener('chargingtimechange', function(){
+    updateChargingInfo();
+  });
+  function updateChargingInfo(){
+    console.log("Battery charging time: "
+                 + battery.chargingTime + " seconds");
+  }
+
+  battery.addEventListener('dischargingtimechange', function(){
+    updateDischargingInfo();
+  });
+  function updateDischargingInfo(){
+    console.log("Battery discharging time: "
+                 + battery.dischargingTime + " seconds");
+  }
+
+});
+	return input;
+}
+// This is the function that will actually change the background color.
+function changeBackgroundColor() {
+	// First it uses the current input value to choose a (grayscale) background color for the page using the CSS rgb() color setting, which expects a number between 0 and 255 for each of a red, green, and blu values.
+	document.body.style.backgroundColor = "rgb(" + Math.floor(input*255) + "," + 0 + "," + 0 + ")";
+	// Then, it generates a new input number by running our generateInput function.
+	input = generateInput();
+}
+// Finally, the background is changed every 1 seconds (or 1000 milliseconds).
+setInterval(changeBackgroundColor, 1000);
 </script>
+
 </body>
 </html>
