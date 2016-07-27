@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Input > Background Color</title>
+	<style>
+	body {
+		transition:1s;
+		background-color:pink;
+	}
+	</style>
+</head>
+<body>
+
+<script>
+// This global variable will make the current value of "input" accessible ANYWHERE in your program.
+var input;
+function generateInput() {
+	navigator.getBattery().then(function(battery) {
+  function updateAllBatteryInfo(){
+    updateChargeInfo();
+    updateLevelInfo();
+    updateChargingInfo();
+    updateDischargingInfo();
+  }
+  updateAllBatteryInfo();
+
+  battery.addEventListener('chargingchange', function(){
+    updateChargeInfo();
+  });
+  function updateChargeInfo(){
+    console.log("Battery charging? "
+                + (battery.charging ? "Yes" : "No"));
+  }
+
+  battery.addEventListener('levelchange', function(){
+    updateLevelInfo();
+  });
+  function updateLevelInfo(){
+    console.log("Battery level: "
+                + battery.level + "%");
+    input = battery.level;
+  }
+
+  battery.addEventListener('chargingtimechange', function(){
+    updateChargingInfo();
+  });
+  function updateChargingInfo(){
+    console.log("Battery charging time: "
+                 + battery.chargingTime + " seconds");
+  }
+
+  battery.addEventListener('dischargingtimechange', function(){
+    updateDischargingInfo();
+  });
+  function updateDischargingInfo(){
+    console.log("Battery discharging time: "
+                 + battery.dischargingTime + " seconds");
+  }
+
+});
+	return input;
+}
+// This is the function that will actually change the background color.
+function changeBackgroundColor() {
+	// First it uses the current input value to choose a (grayscale) background color for the page using the CSS rgb() color setting, which expects a number between 0 and 255 for each of a red, green, and blu values.
+	document.body.style.backgroundColor = "rgb(" + Math.floor(input*255) + "," + 0 + "," + 0 + ")";
+	// Then, it generates a new input number by running our generateInput function.
+	input = generateInput();
+}
+// Finally, the background is changed every 1 seconds (or 1000 milliseconds).
+setInterval(changeBackgroundColor, 1000);
+</script>
+
+</body>
+</html>
