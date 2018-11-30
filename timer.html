@@ -1,0 +1,114 @@
+ <!DOCTYPE html>
+ <html lang="en"> 
+ 	<head>
+ 		<title> JavaScript Stop Watch </title>
+ 		<style text="text/css">
+ 			body {
+ 				background-color: #f4f4f4;
+ 			}
+ 			h1 {
+ 				text-align: center;
+ 				font-size: 100px;
+ 				font-weight: lighter;
+ 				font-family: Arial;
+ 			}
+
+ 			button {
+ 				color: #6f6f6f;
+ 				display: block;
+ 				width: 30%;
+ 				height: 50px;
+ 				margin-left: auto;
+ 				margin-top: 15px;
+ 				margin-right: auto;
+ 				background-color: #e4e4e4;
+ 				border: solid;
+ 				border-top: none;
+ 				border-right: none;
+ 				border-left:none;
+ 				border-bottom-color: #7f7f7f;
+ 				border-radius: 5px;
+ 				font-color: white;
+ 				font-family: "Arial";
+ 			}
+
+ 			button:focus{
+ 				outline: 0;
+ 			}
+ 		</style>
+ 	</head>
+ 	<body>
+ 		<h1><time>00:00:00</time></h1>
+ 		<div>
+		<button id="impromptu">IMPROMPTU SPEECH</button>
+		<button id="prepared">PREPARED SPEECH</button>
+		<button id="stop">STOP</button>
+		<button id="clear">CLEAR</button>
+		</div>
+		<script type="text/javascript">
+ 			var h1 = document.getElementsByTagName('h1')[0],
+    			impromptu = document.getElementById('impromptu'),
+    			prepared = document.getElementById('prepared'),
+    			stop = document.getElementById('stop'),
+    			clear = document.getElementById('clear'),
+   				imp = false, t1, t2, t3,
+   				seconds = 0, minutes = 0, hours = 0, t;
+
+   			function add() {
+			    seconds++;
+			    if (seconds >= 60) {
+			        seconds = 0;
+			        minutes++;
+			        if (minutes >= 60) {
+			            minutes = 0;
+			            hours++;
+			        }
+			    }
+			    h1.textContent = (hours ? (hours > 9 ? hours : "0" + hours) : "00") + ":" + (minutes ? (minutes > 9 ? minutes : "0" + minutes) : "00") + ":" + (seconds > 9 ? seconds : "0" + seconds);
+    			timer();
+    			if(imp) {
+    				t1 = 120, t2 = 150, t3 = 180;
+    			} else {
+    				t1 = 240, t2 = 300, t3 = 360;
+    			}
+    			var totalS = seconds + (minutes * 60);
+    			if(totalS >= t3 + 30)
+    				document.body.style.backgroundColor = "black";
+    			else if(totalS >= t3)
+    				document.body.style.backgroundColor = "red";
+    			else if(totalS >= t2)
+    				document.body.style.backgroundColor = "#ffff00";
+    			else if(totalS >= t1)
+    				document.body.style.backgroundColor = "#00ff00";
+    			else
+    				document.body.style.backgroundColor = "#f4f4f4";
+			}
+			
+			function timer() {
+    			t = setTimeout(add, 1000);
+	  		}
+
+  			/* Start button */
+			impromptu.onclick = function() {
+				timer();
+				imp = true;
+			}
+
+			prepared.onclick = function() {
+				timer();
+				imp = false;
+			}
+			/* Stop button */
+			stop.onclick = function() {
+			    clearTimeout(t);
+			    document.body.style.backgroundColor = "#f4f4f4";
+			}
+
+			/* Clear button */
+			clear.onclick = function() {
+			    h1.textContent = "00:00:00";
+			    seconds = 0; minutes = 0; hours = 0;
+			}
+ 		</script>
+	</body>
+</html>
