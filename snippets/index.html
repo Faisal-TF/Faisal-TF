@@ -117,13 +117,13 @@
 	}
 
 	#w1 {
-		top: 10px;
+		top: 500px;
 		left: 20px;
 	}
 
 	#w2{ 
-		top: 10px;
-		right: 20px;
+		top: 500px;
+		left: 650px;
 	}
 	@keyframes movearound{
 		8% { transform: translateY(-40px); }
@@ -149,26 +149,42 @@
     	90% {-webkit-filter:hue-rotate(500deg)}
     	100% {-webkit-filter:hue-rotate(600deg)}
    }
-	#one
+	.one
 	{
-		width: 300px;
-		height: 400px;
+		width: 200px;
+		height: 266px;
 		background-image: url(1.png);
-		position: absolute;
-		top: 350px;
-		left: 550px;
+		background-size: contain;
 		animation-name: rotating;
 		animation-iteration-count: infinite;
 		animation-duration: 1.5s;
 	}
 
+	#o1 {
+		margin-left: 350px;
+		margin-top: 300px;
+	}
+
+	.five
+	{
+		width: 300px;
+		height: 350px;
+		background-image: url(4.png);
+		background-size:contain;
+		background-repeat: no-repeat;
+		/*position: absolute;*/
+		animation-name: jump;
+		animation-iteration-count: infinite;
+		animation-duration: 1s;
+		margin-top: -200px;
+		margin-left: 950px;
+	}
 	</style>
 </head>
 <body>
 <audio src="Famous.mp3" autoplay> </audio>
 <h1>HAPPY BIRTHDAY GIRL!🎉🎊</h1>
 <div class="one" id="o1"></div>
-<div class="one" id="o2"></div>
 <div class="two" id="w1"></div>
 <div class="two" id="w2"></div>
 <div class="three" id="t1"></div>
@@ -179,7 +195,7 @@
 <div class="four" id="f2"></div>
 <div class="four" id="f3"></div>
 <div class="five" id="e1"></div>
-<div class="five" id="e2"></div>
+<!-- <div class="five" id="e2"></div> -->
 <div id="six"></div>
 <div id="seven"></div>
 <div id="eight"></div>
