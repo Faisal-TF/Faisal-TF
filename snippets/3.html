@@ -51,10 +51,10 @@
 		top: 250px;
 		left: 400px;
 	}
-	#t4 {
+	/*#t4 {
 		top: 250px;
 		left: 1000px;
-	}
+	}*/
 	.four
 	{
 		width: 100px;
@@ -78,10 +78,10 @@
 		left: 600px;
 	}
 
-	#f3 {
+	/*#f3 {
 		top: 300px;
 		left: 900px;
-	}
+	}*/
 	@keyframes jump{
 		25% { transform: rotate(30deg); }
 		75% { transform: rotate(-30deg); }
@@ -176,9 +176,27 @@
 		animation-name: jump;
 		animation-iteration-count: infinite;
 		animation-duration: 1s;
-		margin-top: -200px;
-		margin-left: 950px;
 	}
+
+	#e2 {
+		margin-top: -350px;
+		margin-left: 600px;
+	}
+
+	#six {
+		width: 250px;
+		height: 250px;
+		margin-left: 300px;
+		margin-top: -320px;
+		background-image: url(5.png);
+		background-size:contain;
+		background-repeat: no-repeat;
+		/*position: absolute;*/
+		animation-name: color, frotating;
+		animation-iteration-count: infinite;
+		animation-duration: 1s;
+	}
+
 	</style>
 </head>
 <body>
@@ -190,15 +208,11 @@
 <div class="three" id="t1"></div>
 <div class="three" id="t2"></div>
 <div class="three" id="t3"></div>
-<div class="three" id="t4"></div>
 <div class="four" id="f1"></div>
 <div class="four" id="f2"></div>
-<div class="four" id="f3"></div>
 <div class="five" id="e1"></div>
-<!-- <div class="five" id="e2"></div> -->
+<div class="five" id="e2"></div>
 <div id="six"></div>
-<div id="seven"></div>
-<div id="eight"></div>
 <script>
 </script>
 </body>
