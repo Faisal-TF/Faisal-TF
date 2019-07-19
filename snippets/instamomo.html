@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+	body {
+		background-image: url(r.jpg);
+		position: fixed;
+		background-size: 150%;
+	}
+
+	#momo
+	{
+		width: 400px;
+		height: 300px;
+		position: fixed;
+		z-index:-10;
+		background-image: url(1.PNG);
+		background-size: contain;
+		animation-name: ;
+		animation-duration: 2s;
+		animation-iteration-count: 1;
+	}
+
+	#momo2
+	{
+		width: 400px;
+		height: 300px;
+		position: fixed;
+		z-index:-10;
+		background-image: url(2.PNG);
+		background-size: contain;
+		animation-name: ;
+		animation-duration: 2s;
+		animation-iteration-count: 1;
+	}
+
+	#momo3
+	{
+		width: 400px;
+		height: 300px;
+		position: fixed;
+		z-index:-10;
+		background-image: url(3.PNG);
+		background-size: contain;
+		animation-name: movearound;
+		animation-duration: 2s;
+		animation-iteration-count: 1;
+	}
+
+
+	#click 
+	{
+		height: 55px;
+		width: 150px;
+		margin-top: 380px;
+		margin-left: 100px;
+		border-radius: 10px;
+		border-style: solid;
+		border-width: 2px
+		border: black;
+		text-align: center;
+	}
+
+	p {
+		font-family: sans-serif;
+	}
+
+
+	@keyframes movearound{
+		8% { transform: translateY(-40px); }
+		15% {transform: translateY(-40px);}
+		20% {transform: translateX(30px);}
+		25% {transform: translateY(30px);}
+		40% {transform: translateX(-60px);}
+		60% {transform: translateY(50px)}
+		80% {transform: translateX(30px);}
+		100% {transform: translateX(-5px);}
+	}
+
+    @keyframes color{
+    	0% {-webkit-filter:hue-rotate(50deg);}
+    	10% {-webkit-filter:hue-rotate(100deg);}
+    	20% {-webkit-filter:hue-rotate(150deg);}
+    	30% {-webkit-filter:hue-rotate(200deg);}
+    	40% {-webkit-filter:hue-rotate(250deg);}
+    	50% {-webkit-filter:hue-rotate(300deg);}
+    	60% {-webkit-filter:hue-rotate(350deg)}
+    	70% {-webkit-filter:hue-rotate(400deg)}
+    	80% {-webkit-filter:hue-rotate(450deg)}
+    	90% {-webkit-filter:hue-rotate(500deg)}
+    	100% {-webkit-filter:hue-rotate(600deg)}
+   }
+
+	</style>
+</head>
+<body>
+<div id="momo"></div>
+<div id="click" onclick="clicked()"><p>INSTA MOMO</p></div>
+<script>
+function firstChange() {
+	document.getElementById("momo").setAttribute('id', 'momo2');
+}
+
+function secondChange() {
+	document.getElementById("momo2").setAttribute('id', 'momo3');
+}
+
+function reset() {
+	document.getElementById("momo3").setAttribute('id', 'momo');
+}
+
+function clicked() {
+	firstChange();
+	setTimeout(secondChange, 200);
+	setTimeout(reset, 2500);
+}
+</script>
+</body>
+</html>
