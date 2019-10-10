@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      @keyframes dance{
+    		25% {transform: translateY(-20px)}
+    		50% {transform: translateY(-20px)}
+    		75% {transform: translateY(-20px)}
+    		100% {transform: translateY(-20px)}
+    	}
+
+      body {
+        background-color: lightblue;
+      }
+
+      #momo {
+    		margin-left: 17%;
+    		height: 61%;
+    		width: 80%;
+    		display: block;
+    		float: left;
+    		clear: both;
+    		position: fixed;
+    		background-image: url("sad.png");
+    		background-repeat: no-repeat;
+    		background-size: contain;
+    	}
+
+      .tear {
+        position: fixed;
+        display: block;
+        height: 30%;
+        width: 20%;
+      }
+
+      #left {
+        margin-top: 12%;
+        margin-left: 6%;
+        background-image: url("tears.gif");
+    		background-repeat: no-repeat;
+    		background-size: contain;
+      }
+
+      #right {
+        margin-top: 13%;
+        margin-left: 13.5%;
+        height: 24%;
+        background-image: url("tears.gif");
+    		background-repeat: no-repeat;
+    		background-size: contain;
+      }
+
+      #none {
+        height: 0px;
+      }
+
+      button {
+        margin-top: 32%;
+        margin-left: 29%;
+        border-radius: 4px;
+        background-color: lightgrey;
+        border: none;
+        border-bottom: 2px solid grey;
+        color: grey;
+      }
+    </style>
+    <script>
+      function clicked() {
+        document.getElementById("#left").setAttribute('id', 'none');
+        document.getElementById("#right").setAttribute('id', 'none');
+      }
+    </script>
+  </head>
+  <body>
+    <div id="momo">
+      <div class="tear" id="left"></div>
+      <div class="tear" id="right"></div>
+    </div>
+    <button id="b1" onclick="clicked()">Momo Sad</button>
+  </body>
+</html>
