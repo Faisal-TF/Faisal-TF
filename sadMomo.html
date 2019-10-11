@@ -20,7 +20,8 @@
     		float: left;
     		clear: both;
     		position: fixed;
-    		background-image: url("sad.png");
+    		/* background-image: url("sad.png"); */
+        background-color: black;
     		background-repeat: no-repeat;
     		background-size: contain;
     	}
@@ -110,9 +111,8 @@
     <div class="hiddenreeses" id="r12"></div>
     <div class="hiddenreeses" id="r13"></div>
     <div class="hiddenreeses" id="r14"></div>
-    <button id="btn">Momo Loves You</button>
     <script>
-    document.getElementById("btn").onclick = function() {clicked()};
+    document.getElementById("momo").onclick = function() {clicked()};
       function clicked() {
         document.getElementById("left").classList.add("hidden");
         document.getElementById("right").classList.add("hidden");
