@@ -2,12 +2,11 @@
 <html>
   <head>
     <style>
-      @keyframes dance{
-    		25% {transform: translateY(-20px)}
-    		50% {transform: translateY(-20px)}
-    		75% {transform: translateY(-20px)}
-    		100% {transform: translateY(-20px)}
-    	}
+
+      @keyframes rotate {
+    		20% { transform: rotate(30deg); }
+    		80% { transform: rotate(-30deg); }
+	     }
 
       body {
         background-color: lightblue;
@@ -34,48 +33,103 @@
       }
 
       #left {
-        margin-top: 12%;
-        margin-left: 6%;
+        margin-top: 32%;
+        margin-left: 19%;
         background-image: url("tears.gif");
     		background-repeat: no-repeat;
     		background-size: contain;
       }
 
       #right {
-        margin-top: 13%;
-        margin-left: 13.5%;
+        margin-top: 32%;
+        margin-left: 33%;
         height: 24%;
         background-image: url("tears.gif");
     		background-repeat: no-repeat;
     		background-size: contain;
       }
 
-      #none {
-        height: 0px;
+      .hidden {
+        visibility: hidden;
       }
 
       button {
-        margin-top: 32%;
-        margin-left: 29%;
+        margin-left: 42%;
         border-radius: 4px;
         background-color: lightgrey;
         border: none;
         border-bottom: 2px solid grey;
         color: grey;
       }
-    </style>
-    <script>
-      function clicked() {
-        document.getElementById("#left").setAttribute('id', 'none');
-        document.getElementById("#right").setAttribute('id', 'none');
+
+      body > div {
+        height: 80px;
+        width: 150px;
+        background-image: url("reeses.jpg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        float: left;
+        clear: right;
+        visibility: hidden;
       }
-    </script>
+
+      .reeses {
+        height: 80px;
+        width: 150px;
+        background-image: url("reeses.jpg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        float: left;
+        clear: right;
+        visibility: visible;
+        animation-name: rotate;
+    		animation-iteration-count: infinite;
+    		animation-duration: 2s;
+      }
+
+    </style>
   </head>
   <body>
-    <div id="momo">
-      <div class="tear" id="left"></div>
-      <div class="tear" id="right"></div>
-    </div>
-    <button id="b1" onclick="clicked()">Momo Sad</button>
+    <article>
+      <div id="momo">
+        <div class="tear" id="left"></div>
+        <div class="tear" id="right"></div>
+      </div>
+    </article>
+    <div class="hiddenreeses" id="r1"></div>
+    <div class="hiddenreeses" id="r2"></div>
+    <div class="hiddenreeses" id="r3"></div>
+    <div class="hiddenreeses" id="r4"></div>
+    <div class="hiddenreeses" id="r5"></div>
+    <div class="hiddenreeses" id="r6"></div>
+    <div class="hiddenreeses" id="r7"></div>
+    <div class="hiddenreeses" id="r8"></div>
+    <div class="hiddenreeses" id="r9"></div>
+    <div class="hiddenreeses" id="r10"></div>
+    <div class="hiddenreeses" id="r11"></div>
+    <div class="hiddenreeses" id="r12"></div>
+    <div class="hiddenreeses" id="r13"></div>
+    <div class="hiddenreeses" id="r14"></div>
+    <button id="btn">Momo Loves You</button>
+    <script>
+    document.getElementById("btn").onclick = function() {clicked()};
+      function clicked() {
+        document.getElementById("left").classList.add("hidden");
+        document.getElementById("right").classList.add("hidden");
+        document.getElementById("r1").classList.add("reeses");
+        document.getElementById("r2").classList.add("reeses");
+        document.getElementById("r3").classList.add("reeses");
+        document.getElementById("r4").classList.add("reeses");
+        document.getElementById("r5").classList.add("reeses");
+        document.getElementById("r7").classList.add("reeses");
+        document.getElementById("r8").classList.add("reeses");
+        document.getElementById("r9").classList.add("reeses");
+        document.getElementById("r10").classList.add("reeses");
+        document.getElementById("r11").classList.add("reeses");
+        document.getElementById("r12").classList.add("reeses");
+        document.getElementById("r13").classList.add("reeses");
+        document.getElementById("r14").classList.add("reeses");
+      }
+    </script>
   </body>
 </html>
