@@ -1,0 +1,67 @@
+body {
+  background-color: #000000;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  color: white;
+  font-family: monospace;
+}
+
+html {
+  height: 100%;
+}
+
+h1 {
+  border-bottom: 3px solid #111111;
+}
+
+#labelsMenu {
+  display: block;
+  width: 50%;
+  height: 70%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.label {
+  width: 40%;
+  height: 40%;
+  background-color: pink;
+  border-radius: 5%;
+  background-color: black;
+  border: 3px solid #111111;
+}
+
+#drives {
+  background-image: url("drive.jpg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#layups {
+  background-image: url("lay.jpg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#post {
+  background-image: url("post.jpg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#jumpshots {
+  background-image: url("jumpshot.jpg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
