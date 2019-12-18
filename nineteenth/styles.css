@@ -12,8 +12,8 @@ body {
 #magGlass {
   height: 35%;
   width: 35%;
-  margin-left: 50%;
-  margin-top: -95%;
+  margin-left: 60%;
+  margin-top: -155%;
   background-image: url("ogGlass.png");
   background-position: center;
   background-size: contain;
@@ -69,4 +69,41 @@ body {
 h1 {
   transform: rotate(-20deg);
   margin-top: -10%;
+  font-size: 200%;
+}
+
+#hearts {
+  background-image: url("heart.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-top: 20%;
+  margin-left: -10%;
+  z-index: -1;
+  width: 70%;
+  height: 30%;
+}
+
+#hmfly {
+  font-size: 70%;
+  transform: rotate(-30deg);
+  margin-left: 5%;
+  margin-top: -20%;
+}
+
+#lilHeart {
+  background-image: url("lilHeart.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 6%;
+  width: 6%;
+  margin-left: 60%;
+  margin-top: 5%;
+}
+
+#dmg {
+  font-size: 60%;
+  margin-left: 30%;
+  margin-top: -11%;
 }
