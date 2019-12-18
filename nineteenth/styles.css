@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower&display=swap');
+html, body {
+  height: 100%;
+}
+
+body {
+  background-color: white;
+  text-align: center;
+  font-family: "Indie Flower", cursive;
+}
+
+#magGlass {
+  height: 35%;
+  width: 35%;
+  margin-left: 50%;
+  margin-top: -95%;
+  background-image: url("ogGlass.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.peach {
+  height: 5%;
+  width: 5%;
+  background-image: url("peach.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.peony {
+  height: 10%;
+  width: 10%;
+  background-image: url("peony.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#peony1 {
+  height: 20%;
+  width: 20%;
+  margin-left: 5%;
+}
+
+#peony2 {
+  height: 30%;
+  width: 30%;
+  margin-left: 35%;
+  margin-top: -80px;
+}
+
+#peach1 {
+  margin-left: 75%;
+}
+
+#peach2 {
+  margin-left: 65%;
+}
+
+#peach3 {
+  margin-left: 80%;
+  margin-top: 40%;
+  height: 10%;
+  width: 10%;
+}
+
+h1 {
+  transform: rotate(-20deg);
+  margin-top: -10%;
+}
