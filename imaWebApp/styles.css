@@ -13,8 +13,6 @@ body {
 
 main {
   margin: auto;
-  border-left: solid 2px grey;
-  border-right: solid 2px grey;
   width: 60%;
   height: 80%;
   margin-top: 5%;
@@ -72,10 +70,6 @@ main {
   font-size: 80%;
 }
 
-.full p {
-
-}
-
 .filling {
   background-image: url("images/yellowCourt.jpg");
 }
@@ -94,6 +88,14 @@ body p {
   height: 15px;
   background-image: url("images/2reds.png");
   margin-bottom: 2px;
+}
+
+#div {
+  height: 80%;
+  width: 0px;
+  border: solid 1px grey;
+  position: absolute;
+  top: 70px;
 }
 
 #a {
