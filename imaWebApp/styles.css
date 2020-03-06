@@ -1,0 +1,141 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  background-color: #111;
+}
+
+body {
+  font-family: monospace;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+main {
+  margin: auto;
+  border-left: solid 2px grey;
+  border-right: solid 2px grey;
+  width: 60%;
+  height: 80%;
+  margin-top: 5%;
+  margin-left: 0px;
+  margin-right: 0px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.court {
+  width: 320px;
+  height: 200px;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+}
+
+.msg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  max-width: 110px;
+  flex-wrap: wrap;
+  background-color: grey;
+  border: solid 2px lightgrey;
+}
+
+.msg p {
+  color: lightgrey;
+}
+
+.empty {
+  background-image: url("images/greenCourt.jpg");
+}
+
+.empty img {
+  width: 20px;
+  height: 20px;
+}
+
+.court p {
+  text-align: center;
+  width: 90px;
+  margin-top: 8px;
+  margin: auto;
+  font-size: 80%;
+}
+
+.full p {
+
+}
+
+.filling {
+  background-image: url("images/yellowCourt.jpg");
+}
+
+.full {
+  background-image: url("images/redCourt.jpg");
+}
+
+body p {
+  color: lightgrey;
+}
+
+.team {
+  clear: left;
+  width: 80px;
+  height: 15px;
+  background-image: url("images/2reds.png");
+  margin-bottom: 2px;
+}
+
+#a {
+  font-size: 130%;
+  float: left;
+  margin-top: 310px;
+  position: static;
+  margin-right: 20px;
+}
+
+#b {
+  font-size: 130%;
+  float: right;
+  margin-top: 310px;
+  position: static;
+  margin-left: 20px;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.notif {
+  background-color: grey;
+  border: solid 2px white;
+  opacity: 0.9;
+  height: 80px;
+  width: 220px;
+  position: absolute;
+  border-radius: 4%;
+  top: 270px;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+}
+
+.notif p {
+  font-size: 220%;
+  color: black;
+}
+
+.notif img {
+  height: 40px;
+  margin-right: 5px;
+}
