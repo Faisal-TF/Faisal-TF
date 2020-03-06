@@ -57,14 +57,13 @@ function addPlayer(court) {
 }
 
 function addPlayer2(team) {
-  let imgSrc = team.src;
-  let players = imgSrc.charAt(39);
-  console.log(imgSrc);
+  let imgSrc = team.getAttribute("src");
+  let players = imgSrc.charAt(7);
   if(players == '5') {
     return false;
   } else {
     players++;
-    team.src = imgSrc.substring(32,39) + players + imgSrc.substring(40);
+    team.src = "images/" + players + "reds.png";
     return true;
   }
 }
