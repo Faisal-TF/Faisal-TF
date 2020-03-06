@@ -52,6 +52,7 @@ main {
 
 .msg p {
   color: lightgrey;
+  cursor: default;
 }
 
 .empty {

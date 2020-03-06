@@ -10,18 +10,21 @@ function init() {
 function btnClicked() {
   let court = this.parentNode;
   if(court.classList.contains("empty")) {//Starting new game
-    startGame(court);
+    pendGame(court);
   } else if (court.classList.contains("filling")) {//Joining pending game
     let teams = court.querySelectorAll("img");
-    if(addPlayer2(teams[0])) {
+    if(addPlayer(teams[0])) {
       notify("success");
-    } else if (addPlayer2(teams[1])) {
+    } else if (addPlayer(teams[1])) {
       notify("success");
+      if(teams[1].getAttribute("src").charAt(7) == 5) {
+        setTimeout(function(){ startGame(court); }, 500);
+      }
     } else {
-      notify("fail");
+      notify("fail")
     }
   } else {//Joining Queue
-    if(addPlayer2(court.querySelector("img")))
+    if(addPlayer(court.querySelector("img")))
       notify("success");
     else {
       notify("fail");
@@ -30,33 +33,27 @@ function btnClicked() {
 }
 
 function startGame(court) {
+  court.classList.remove("filling");
+  court.classList.add("full");
+  let msgContainer = court.querySelector(".msg");
+  empty(msgContainer);
+  msgContainer.appendChild(par("Call next"));
+  msgContainer.appendChild(newTeam(0));
+
+}
+
+function pendGame(court) {
   court.classList.remove("empty");
   court.classList.add("filling");
   let msgContainer = court.querySelector(".msg");
-  while (msgContainer.hasChildNodes()) { //empties message container
-        msgContainer.removeChild(msgContainer.lastChild);
-  }
+  empty(msgContainer);
   msgContainer.appendChild(par("Join game"));//appends new message
   msgContainer.appendChild(newTeam(1));
   msgContainer.appendChild(newTeam(0));
   notify("success");
 }
 
-
-function addPlayer(court) {
-  let imgSrc = court.querySelector("img").src;
-  let players = imgSrc.charAt(39);
-  console.log(imgSrc);
-  if(players == '5') {
-    notify("fail");
-  } else {
-    players++;
-    court.querySelector("img").src = imgSrc.substring(32,39) + players + imgSrc.substring(40);
-    notify("success");
-  }
-}
-
-function addPlayer2(team) {
+function addPlayer(team) {
   let imgSrc = team.getAttribute("src");
   let players = imgSrc.charAt(7);
   if(players == '5') {
@@ -65,6 +62,12 @@ function addPlayer2(team) {
     players++;
     team.src = "images/" + players + "reds.png";
     return true;
+  }
+}
+
+function empty(container) {//empties container
+  while (container.hasChildNodes()) {
+        container.removeChild(container.lastChild);
   }
 }
 
