@@ -101,6 +101,7 @@ body p {
   border: solid 1px grey;
   position: absolute;
   top: 70px;
+  z-index: 0;
 }
 
 #a {
@@ -125,8 +126,8 @@ body p {
 
 .notif {
   background-color: grey;
-  border: solid 2px white;
-  opacity: 0.9;
+  border-bottom: solid 2px white;
+  opacity: 1;
   height: 80px;
   width: 220px;
   position: absolute;
@@ -136,11 +137,12 @@ body p {
   justify-content: center;
   flex-direction: row;
   align-items: center;
+  z-index: 3;
 }
 
 .notif p {
   font-size: 220%;
-  color: black;
+  color: white;
 }
 
 .notif img {
