@@ -7,34 +7,41 @@
     <title></title>
   </head>
   <body>
-    <p id="a">GYM A</p>
-    <main>
-      <div class="court empty">
-        <div class="msg">
-          <img src="images/add.png" alt="">
-          <p>Start new game</p>
+    <h2>Court Sign Up</h2>
+      <p id="a">GYM A</p>
+      <main>
+        <div class="court empty">
+          <div class="msg">
+            <img src="images/add.png" alt="">
+            <p>Start new game</p>
+          </div>
         </div>
-      </div>
 
-      <div class="court full">
-        <div class="msg"><p>Call next</p><img src="images/2reds.png" class="team"></div></div>
-      </div>
-
-      <div class="court filling">
-        <div class="msg"><p>Join game</p><img src="images/2reds.png" class="team">
-        <img src="images/0reds.png" class="team"></div>
-      </div>
-
-      <div class="court empty">
-        <div class="msg">
-          <img src="images/add.png" alt="">
-          <p>Start new game</p>
+        <div class="court full">
+          <div class="msg"><p>Call next</p><img src="images/2reds.png" class="team"></div></div>
         </div>
+
+        <div class="court filling">
+          <div class="msg"><p>Join game</p><img src="images/2reds.png" class="team">
+          <img src="images/0reds.png" class="team"></div>
+        </div>
+
+        <div class="court empty">
+          <div class="msg">
+            <img src="images/add.png" alt="">
+            <p>Start new game</p>
+          </div>
+        </div>
+      </main>
+      <p id="b">GYM B</p>
+      <div id="success" class="notif hidden"><img src="images/success.png" alt=""><p> Sucess!</p>
       </div>
-    </main>
-    <p id="b">GYM B</p>
-    <div id="success" class="notif hidden"><img src="images/success.png" alt=""><p> Sucess!</p></div>
-    <div id="fail" class="notif hidden"><img src="images/fail.png" alt=""><p> Team full</p></div>
-    <div id="div"> </div>
+      <div id="fail" class="notif hidden"><img src="images/fail.png" alt=""><p> Team full</p></div>
+      <div id="div"> </div>
+      <div id="guide">
+        <div class="legend" id="green">Available</div>
+        <div class="legend" id="yellow">Pending Game</div>
+        <div class="legend" id="red">Ongoing Game</div>
+      </div>
   </body>
 </html>

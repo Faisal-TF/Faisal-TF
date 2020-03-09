@@ -11,6 +11,11 @@ body {
   flex-direction: row;
 }
 
+h2 {
+  position: absolute;
+  color: white;
+}
+
 main {
   margin: auto;
   width: 60%;
@@ -45,7 +50,7 @@ main {
   max-width: 110px;
   flex-wrap: wrap;
   background-color: grey;
-  border: solid 2px lightgrey;
+  border-bottom: solid 2px lightgrey;
 }
 
 .msg p {
@@ -84,7 +89,7 @@ body p {
 
 .team {
   clear: left;
-  width: 80px;
+  width: 84px;
   height: 15px;
   background-image: url("images/2reds.png");
   margin-bottom: 2px;
@@ -141,4 +146,34 @@ body p {
 .notif img {
   height: 40px;
   margin-right: 5px;
+}
+
+#guide {
+  width: 80%;
+  height: 10%;
+  top: 90%;
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  padding: 20px;
+}
+
+.legend {
+  color: white;
+  height: 17px;
+  padding-left: 3px;
+  border-left: solid 2px white;
+}
+
+#green {
+  border-color: #01FD03;
+}
+
+#yellow {
+  border-color: #FFF800;
+}
+
+#red {
+  border-color: #E90805;
 }
