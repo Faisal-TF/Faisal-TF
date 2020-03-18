@@ -247,7 +247,7 @@ function switchScreen(optionNum) {
 
 "nar": "Trapped, hopeless, and hungry, Omar sees no other option than to join ISIS. He has never been eager to fight, especially not in the name of religion or politics which he doesn't care much about, and he has no desire to hurt anyone. Yet, he knows that as a member of ISIS his family will be among the first to get supplies when they come into the city. He will be respected, or feared, by members of his community. If he asks for something, he will get it. And while he may not be safe, his family will. He is old enough now, isn’t it his duty to take care of them? Omar is almost relieved when he receives his first task: bomb a road regularly used by opposition forces. This type of attack doesn’t involve any direct contact and it will only harm a few people at the most… maybe, with enough prayer, he will be forgiven?",
 
-"bg" : "",
+"bg" : "https://img.thedailybeast.com/image/upload/c_crop,d_placeholder_euli9k,h_1439,w_2560,x_0,y_0/dpr_1.5/c_limit,w_1044/fl_lossy,q_auto/v1492187015/articles/2015/01/14/exclusive-isis-gaining-ground-in-syria-despite-u-s-strikes/150113-mak-syria-map-tease_ubgfmk",
 
 
 },
@@ -272,7 +272,7 @@ function switchScreen(optionNum) {
 {//19
 "nar": "After all he had witnessed, Omar decides that he will risk escape at any cost. It will be a dangerous journey, and one that must be done alone. Lebanon and Jordan are the closest neighboring countries, but as a Palestinian-Syrian, Omar knows that he will only have a chance at gaining residency in Turkey. Once he has settled in Turkey, found work, and saved a little money then, he tells himself, he will come back to rescue his siblings. Late at night, he leaves his home to meet his smuggler at an abandoned factory, bringing with him the entirety of his family’s savings for the fee. Omar and six other people crowd into the back of the smuggler’s truck for the four-day-long journey. The trip is exhausting and difficult, but all goes according to plan--until they arrive at a military checkpoint near the border. The guards interrograte the smuggler, who insists that he is transporting produce to a market but a baby in the truck begins to cry, exposing his lie. A guard slams open the truck’s door, revealing the passengers inside. He asks them if they are trying to escape to Turkey. Omar’s heart is pounding in his chest, his hands start to shake, and he feels sweat forming at his brow. This is it, they’ve been caught. “All of you, out of the truck now!” the guard yells “You’re going to jail”.",
 
-"bg": "",
+"bg": "https://www.aljazeera.com/mritems/imagecache/mbdxxlarge/mritems/Images/2019/12/22/dc3be361867f4f9da8d4db41e81af2a5_18.jpg",
 
 
 },
@@ -299,7 +299,7 @@ function switchScreen(optionNum) {
 
 "nar": "What’s worse, death by starvation or violence? The latter would be quick, but guaranteed. The former would be longer and perhaps more painful, but the safety that could be bought by relinquishing their supplies would give them hope, a second chance to find food. Omar chooses this option, and donates his family’s remaining supply of food and water to the military group occupying the area. One of the group’s leaders is pleased by what he views as an act of Omar’s loyalty and allows him to keep some of it, enough to feed his family for one more week. During this time Omar searches for more supplies, but his efforts are to avail. By the end of the week, his brother and sister are once again hungry and their options are exhausted. He begins to reconsider joining ISIS. Maybe he would be killed fighting, but for a while, at least, he could provide for his family.",
 
-"bg": "",
+"bg": "https://g4k5b9h2.stackpathcdn.com/wp-content/uploads/2013/11/syriahungry.jpg",
 
 
 },
@@ -318,7 +318,7 @@ function switchScreen(optionNum) {
 
 "nar": "Omar and his family need to leave—now. They don’t have enough money in savings to pay smuggler’s fees for the whole family, which would be around $5000, so they must attempt the journey on their own. They decide to flee south to Jordan because it is the shortest and safest route, leaving late at night and taking only what they can carry. It is an extremely hot day and the trip is arduous. They drink through their supply of water faster than they’d anticipated and run out by the middle of the day when they need it most. After an exhausting day of hiking through the desert, the family finally arrives at a refugee camp just across the border. They are tired, hungry, and dehydrated, and hope to find the supplies they need at the camp. However, resources are low and their new neighbors are reluctant to share what little they have. Without access to drinking water and food, survival may be harder in the safety of the refugee camp than in the battleground of their home city.",
 
-"bg": "",
+"bg": "http://paysdegex-refuge.fr/wp-content/uploads/2015/09/557035ce31219Syrian_refugees_desert.jpg?w=84&h=47&crop=1",
 
 
 },
