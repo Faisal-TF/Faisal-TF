@@ -1,7 +1,7 @@
-window.addEventListener("load", init);
+  window.addEventListener("load", init);
 
 let moves = 0;
-let prevMoves = [0,0,0,0,0,0];
+let prevMoves = [1,0,0,0,0,0];
 
 function init() {
   toggleHelp();
@@ -14,8 +14,10 @@ function init() {
 }
 
 function back() {
+  if(moves > 0) {
     moves--;
-    generateSlide(parseInt(prevMoves[moves]));
+    generateSlide(parseInt(prevMoves[moves]) - 1);
+  }
 }
 
 function toggleHelp() {
@@ -27,11 +29,13 @@ function toggleHelp() {
 function generateSlide(i) {
   let slide = slides[i];
   document.getElementById("narContainer").querySelector("p").textContent = slide["nar"];
-  plugOption(document.getElementById("optn1").querySelector("p"), slide["optn1"]);
-  plugOption(document.getElementById("optn2").querySelector("p"), slide["optn2"]);
   let imgUrl = "url('" + slide["bg"] + "')";
-  console.log(imgUrl);
   document.getElementById("bgContainer").style.backgroundImage = imgUrl;
+  if(slide["optn1"]) {
+    plugOption(document.getElementById("optn1").querySelector("p"), slide["optn1"]);
+    plugOption(document.getElementById("optn2").querySelector("p"), slide["optn2"]);
+  } else {
+  }
 }
 
 function plugOption(container, option) {
@@ -190,4 +194,149 @@ function switchScreen(optionNum) {
 "optn2": "20Marry his younger sister to solidify power under his household"
 
 },
+{
+
+"nar": "The pressure has let up… for a while. Fortunately, the group did not press further onto the hospitality of the community, but the enemy forces took notice and have devastated the community economy. All supplies are cut off and the warfare draws closer. Hiding has helped, but not for long. The family eventually needs more food.",
+
+"bg": "",
+
+"optn1":"14Stay safe and hope for the best",
+
+"optn2":"15Sneak out to other communities for supplies"
+
+},
+
+{
+
+"nar": "The best did not occur. The family is on the brink of starving and all nearby resources have been scavenged by the remaining community members. Offered a suggestion: escape as a group",
+
+"bg": "",
+
+"optn1":"18Follow the community group in their fight",
+
+"optn2":"19Escape independently"
+
+},
+
+{
+
+"nar" : " In one of the supply runs, mother is killed in an unfortunate drone strike. Father joins ISIS and the community resembles ruins more and more with each passing day",
+
+"bg": "https://globalaid.net/uploads/16damascus-3-articleLarge.jpg",
+
+"optn1":"17Try to hold together the remnants of his family",
+
+"optn2":"16Join ISIS with father"
+
+},
+
+{
+
+"nar" : " In one of the supply runs, mother is killed in an unfortunate drone strike. Father joins ISIS and the community resembles ruins more and more with each passing day",
+
+"bg": "https://globalaid.net/uploads/16damascus-3-articleLarge.jpg",
+
+"optn1": "17Try to hold together the remnants of his family",
+
+"optn2": "16Join ISIS with father"
+
+},
+
+{
+
+"nar": "",
+
+"bg" : "",
+
+
+},
+
+{
+
+"nar" : "It has been a long day for Omar. He drinks what little water he has left. Toughest of the battles had passed weeks ago: out somewhere else, probably seeking more to consume in its destructive path. It has gotten easier to get out and about, not that there’s much point; his siblings had died. The older brother went out to gather what food he could, but never returned back to the hideout. The younger ones died of some illness. Some said it was from the tainted water, the others said from the corpses and rats. Father returned a few days back with nothing but broken promises and an infected foot. His father never explained what happened, and Omar never asked. Omar knew his father’s time wasn’t long. He had neither the means nor the will to bear this agony. He will watch his father pass, but no more. He didn’t care anymore. When he handed off the remaining supplies to the neighbors, they told him to not give up: that life goes on. Omar knows that it does. But not for his mother. Not for his little sister. And not for himself",
+
+"bg" : "https://www.thelocal.ch/userdata/images/article/5750dedba9f5bfc3f3091395f66d4407cfa6e9376b85600b4745c3240e97c2f6.jpg",
+
+
+},
+
+{
+
+"nar" : "They made it. They had somehow avoided serious trouble and reached a relatively safer town. But things didn’t get better. Just as feared, no one wanted a group of people with nothing to offer and everything to want. Well, nothing to offer until some bunch decided that Omar’s little sister could be wed into one of the member of the town in exchange for supplies. Omar was against it, mother was against it, but times were tough and rules were tougher. So Omar had to get tougher as well. It was the first time Omar hurt anyone: he had been a kindred spirit, after all. But it was not the last time he did. Where the locals saw cold-blooded murder, others saw opportunity. Omar was determined and willing to act, at least for now. The rest of the group formed around Omar, big enough to overpower the locals and take what is rightfully theirs. But once again, the supplies grow thin, and Omar knows that the pack will have to hunt again soon.",
+
+"bg" : "https://www.almasdarnews.com/wp-content/uploads/2017/12/RaqqaDestruction.jpg",
+
+},
+
+{
+
+"nar": "",
+
+"bg": "",
+
+
+},
+
+{
+
+"nar": "Power. Omar has some great semblance of it in his community. He controls who lives, or who dies. Who gets food, who doesn’t. Who they raid, and who they spare. He isn’t a particularly menacing leader, but in wartime, prices are paid, sometimes in gold, sometimes in iron. Despite the previous history, Omar recently had to make an alliance with ISIS in order to secure extra supplies and freedom of movement. In exchange, Omar’s group will supply ISIS with crucial tactical information, as well as some share of the loot whenever Omar raids a village. Once, he had to donate a child to act as a decoy for ISIS trap. It didn’t work, but it got them precious weapons and ammo, so Omar was satisfied. The demands ISIS makes upon his group grows bigger and bigger, but Omar must follow them: he knows that many vie for his position, and he can’t allow that to happen. Perhaps there will come a time where the sacrifice will be too great for him to make. But Omar fears that by that time, it won’t seem too great of a sacrifice.",
+
+"bg": "https://cdn.prod.www.spiegel.de/images/46578127-0001-0004-0000-000001114786_w1528_r1.5_fpx55.32_fpy44.99.jpg",
+
+
+},
+
+{
+
+"nar": "Where had it gone wrong? We had a fighting chance holding our community together, but now all will pay the greed of others. How could they not see that we were still in deep? How could they not realize that we were still under watch? The signs of infighting was brewing, and Omar tried all he could to deescalate the situation. He bribed with what little he had left, he begged them to reconsider, and he even abdicated his position so the other group would retain full power. But his younger brother saw this short power vacuum as his opportunity, and seized that little, meaningless thing. He was an expert at rousing the people’s heart, but a foolish, short-sighted leader. Once the infighting broke out in full, ISIS sweeped in and devastated our group. Omar stands, his body to the walls, lined up with the rest of his townsfolk. Behind him, he hears the guns being raised up. Omar’s brother is next to him, praying to the gods. Omar opens his mouth too, but finds no words of prayer. Inside him is only resentment, for his brother, for his townsfolk, and for himself.",
+
+"bg": "https://nedaa-sy.com/storage/news_images/10692/E4y1rCt7V7qwef8LnB5Vply6PCkIVJMXk4g31dlB.jpeg?w=720&h=405",
+
+
+},
+
+{
+
+"nar": "",
+
+"bg": "",
+
+
+},
+
+{
+
+"nar"
+: "The tense situation began to resolve into two main factions; one siding with Omar, the other with the group that stole Omar’s stockpile. Justice was on his side, and Omar was confident that his family will be repaid for their kindness. Things were optimistic at first, but as time dragged on, more and more fell away from Omar’s cause and joined the other group. After all, food and supplies rules supreme in desperate times. Eventually, Omar only had himself and his family to fend for themselves, and were driven out. With military everywhere and no supplies, Omar fears the worst.",
+
+"bg" : "https://theglobepost.com/wp-content/uploads/2018/12/Syrian-refugees-1140x570.jpg",
+
+
+},
+
+{
+
+"nar": "",
+
+"bg": "",
+
+
+},
+
+{
+
+"nar": "Being alive is what’s important. Omar’s family lives yet another day. They had to give up their dignity, suffer through humiliation, but they are still alive. Omar trudges back to the shelter, bruised, battered, and utterly exhausted. He has had to prove himself just to afford a place for his family to live in. Work was hard, but watching out for himself was harder. A broken nail, a trip, a fall… anything could put him and his family on the brink. That’s why Omar was worried when he began coughing. He knew that renovating old buildings was a dangerous task, and there was no way he could afford safety gears. He was able to hide it for so long, but he fears that this isn’t a common cold. He fears that he won’t be able to hide his illness, that he won’t be able to work. That he had doomed his family with his choices. But for now, he rests his eyes to work tomorrow, so that he and his family may live, one day more.",
+
+"bg": "https://mronline.org/wp-content/uploads/2020/01/Syria-5_featured-600x400.jpg",
+
+
+},
+
+{
+
+"nar" : "Omar had education, yes, but he didn’t have the street smarts. When he got caught trying to steal medicine, the townsfolk reported him to the militia, who decided they had a better use for two able hands and feet. It had been 2 weeks working as a messenger, carrying marked packages from one end to another. At least there was solace in the fact that he heard news of his father and his family on his trips to and from. The last package he delivered was peculiar, and the recipient even more so. The look on his face was a mixture: grim determination, some hidden fear, anger, sadness, and so much more. When Omar handed the package off, he knew what was going to happen. He knew that many would die, with no regards to innocence or guilt. But the deaths won’t be on his hands… that’s what he told himself.",
+
+"bg": "https://cdn.theatlantic.com/thumbor/VSVQQevPuX3l444XvzLqFwJToEY=/0x203:3888x2390/1440x810/media/img/mt/2017/02/AP_134684065776/original.jpg",
+
+}
 ]
