@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style media="screen">
+      html, body {
+        widht: 100%;
+        height: 100%;
+        font-family: monospace;
+        background-image: url("farm.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        backdrop-filter: blur(2px);
+        padding: 0;
+        margin: 0;
+      }
+
+      h2 {
+        position: absolute;
+        left: 47%;
+      }
+
+      h3 {
+        position: absolute;
+        color: red;
+        left: 47%;
+        top: 5%;
+      }
+
+      #chickenContainer{
+        position: relative;
+        width: 80%;
+        height: 15%;
+        margin: auto;
+        top: 20%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+      }
+
+      .chicken{
+        width: 10%;
+        height: 90%;
+        background-image: url("ricardo.png");
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+
+      .flipped {
+        transform: scaleX(-1);
+      }
+
+      #bucket {
+        position: relative;
+        top: 69%;
+        left: 5%;
+        width: 10%;
+        height: 16%;
+        background-image: url("basket.png");
+    		background-size: cover;
+      }
+
+      .egg {
+        height: 17%;
+        width: 5%;
+        position: absolute;
+        background-repeat: no-repeat;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      #egg1, #egg2 {
+        background-image: url("head5.png");
+    		background-size: contain;
+      }
+
+      #egg4, #egg7 {
+        background-image: url("head2.png");
+    		background-size: contain;
+      }
+
+      #egg3, #egg5 {
+        background-image: url("head3.png");
+    		background-size: contain;
+      }
+
+      #egg6, #egg8 {
+        background-image: url("head4.png");
+    		background-size: contain;
+      }
+
+      @keyframes rotate{
+    		8% { transform: translateY(-40px); }
+    		15% {transform: translateY(-40px);}
+    		20% {transform: translateX(30px);}
+    		25% {transform: translateY(30px);}
+    		40% {transform: translateX(-60px);}
+    		60% {transform: translateY(50px)}
+    		80% {transform: translateX(30px);}
+    		90% {transform: translateX(-5px)}
+    	}
+
+      @keyframes frotating{
+      /*50% {transform: rotate(180deg);}*/
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes rotating{
+		25% { transform: rotate(30deg); }
+		40% {transform: rotate(30deg);}
+		60% {transform: rotate(30deg);}
+		75% { transform: rotate(30deg); }
+	}
+
+    </style>
+    <script type="text/javascript">
+        window.addEventListener("load", init);
+        let intervalId = [null, null, null, null, null, null, null, null]; //corresponding egg interval id
+        let gameInterval;
+        function init() {
+          document.addEventListener("keydown", detectKey);
+          document.getElementById("bucket").style.left = "5%";
+          document.getElementById("egg1").style.top = "22%";
+          document.getElementById("egg5").style.top = "22%";
+          document.getElementById("egg2").style.top = "22%";
+          document.getElementById("egg6").style.top = "22%";
+          document.getElementById("egg3").style.top = "22%";
+          document.getElementById("egg7").style.top = "22%";
+          document.getElementById("egg4").style.top = "22%";
+          document.getElementById("egg8").style.top = "22%";
+          document.getElementById("egg1").style.left = "17.5%";
+          document.getElementById("egg5").style.left = "17.5%";
+          document.getElementById("egg2").style.left = "37.5%";
+          document.getElementById("egg6").style.left = "37.5%";
+          document.getElementById("egg3").style.left = "57.5%";
+          document.getElementById("egg7").style.left = "57.5%";
+          document.getElementById("egg4").style.left = "77.5%";
+          document.getElementById("egg8").style.left = "77.5%";
+          gameInterval = setInterval(launchEgg, 1200);
+        }
+
+        function launchEgg() {
+          let eggs = document.querySelectorAll(".egg");
+          let randI = Math.floor(Math.random() * 8);
+          while (!eggs[randI].classList.contains("hidden")) {
+            randI = Math.floor(Math.random() * 8);
+          }
+          eggs[randI].classList.remove("hidden");
+          intervalId[randI] = setInterval(function() {advanceEgg(randI + 1);}, 300);
+        }
+
+        function advanceEgg(i) {
+          let egg = document.getElementById("egg" + i);
+          let ogVal = parseInt(egg.style.top.substring(0, egg.style.top.length - 1));
+          if(ogVal > 76) { //if egg has reached bottom
+            egg.style.top = "22%";
+            egg.classList.add("hidden");
+            clearInterval(intervalId[i - 1]);
+            let bucket = document.getElementById("bucket");
+            let bucketLeft = parseInt(bucket.style.left.substring(0, bucket.style.left.length - 1));
+            let eggLeft = parseInt(egg.style.left.substring(0, egg.style.left.length - 1));
+            if((bucketLeft - eggLeft > -3) && (bucketLeft - eggLeft <= 8)) {
+              let h2 = document.querySelector("h2");
+              let score = parseInt(h2.textContent.substring(7,9)) + 1;
+              if(score < 10) {
+                score = "0" + score;
+              }
+              h2.textContent = "SCORE: " + score;
+            } else {
+              let h3 = document.querySelector("h3");
+              h3.textContent = h3.textContent + "X";
+              if(h3.textContent == "XXX") {
+                clearInterval(gameInterval);
+                for(let i = 0; i < intervalId.length; i++) {
+                  clearInterval(intervalId[i]);
+                  gameOver();
+                }
+              }
+            }
+          } else { //advance egg 8 more
+            let newVal = ogVal + 8;
+            egg.style.top = newVal + "%";
+          }
+        }
+
+        function gameOver() {
+          let eggs = document.querySelectorAll(".egg");
+          for(let i = 0; i < eggs.length; i++) {
+            eggs[i].style.animationName = "rotate";
+          }
+          setInterval(function() {document.querySelector("body").style.background = "red";}, 1000);
+          setInterval(function() {document.querySelector("body").style.background = "black";}, 2000);
+        }
+
+        function detectKey(e) {
+          if(e.keyCode == 37 || e.keyCode == 39) {
+            moveCat(e.keyCode - 38); //sends a 1 when right, -1 when left
+          }
+        }
+
+        function moveCat(rightStep) {
+          let cat = document.getElementById("bucket");
+          if(rightStep) {
+            //changeBgToRightFacing
+          } else {
+            //LeftFacingBG
+          }
+          let ogVal = cat.style.left;
+          let leftDist = parseInt(ogVal.substring(0, ogVal.length - 1)) + (5 * rightStep);
+          cat.style.left = leftDist + "%";
+        }
+    </script>
+  </head>
+  <body>
+    <h2>SCORE: 00</h2>
+    <h3></h3>
+    <div id="chickenContainer">
+      <div class="chicken">
+      </div>
+      <div class="chicken flipped">
+      </div>
+      <div class="chicken flipped">
+      </div>
+      <div class="chicken">
+      </div>
+    </div>
+    <div id="bar"></div>
+    <div class="egg hidden" id="egg1">
+    </div>
+    <div class="egg hidden" id="egg2">
+    </div>
+    <div class="egg hidden" id="egg3">
+    </div>
+    <div class="egg hidden" id="egg4">
+    </div>
+    <div class="egg hidden" id="egg5">
+    </div>
+    <div class="egg hidden" id="egg6">
+    </div>
+    <div class="egg hidden" id="egg7">
+    </div>
+    <div class="egg hidden" id="egg8">
+    </div>
+    <div id="bucket">
+    </div>
+  </body>
+</html>
