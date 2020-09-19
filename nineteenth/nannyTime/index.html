@@ -62,8 +62,18 @@
         left: 566px;
       }
 
+      #bfly {
+        background-image: url(bfly.png);
+        height: 163px;
+        width: 177px;
+        background-size: contain;
+        top: 366px;
+        left: 397px;
+        transform: rotate(10deg);
+      }
+
       #cloud {
-        background-image: url(testCloud.png);
+        background-image: url(cloud3.png);
         height: 292px;
         width: 483px;
         background-size: contain;
@@ -72,7 +82,7 @@
       }
 
       #cloudt {
-        background-image: url(testCloud.png);
+        background-image: url(cloud3.png);
         height: 227px;
         width: 374px;
         background-size: contain;
@@ -82,12 +92,13 @@
 
       #starbg {
         background-image: url(stars.jpg);
-        height: 1208px;
+        height: 1285px;
         width: 1701px;
         background-size: cover;
-        top: 132px;
-        left: -241px;
-        transform: rotate(-90deg);
+        top: 197px;
+        left: -277px;
+        transform: rotate(-90deg) scaleY(-1);
+        background-position-y: -60px;
       }
 
       h2, h3 {
@@ -117,16 +128,18 @@
     <div id="starbg"></div>
     <div id="box"></div>
     <div id="quad"></div>
-    <div id="eyes"></div>
     <div id="threePeonies"></div>
     <div id="whitePeony"></div>
     <div id="pinkPeonies"></div>
+    <div id="bfly"></div>
     <div id="cloud"></div>
     <div id="cloudt"></div>
+    <div id="eyes"></div>
     <h2>Happy 19th <br> Baby Peach <3 </h2>
     <h3>Play Me</h3>
     <script type="text/javascript">
       var audio = new Audio('story.mp3');
+      audio.load();
       document.getElementById("box").addEventListener("click", function() {audio.play();});
     </script>
   </body>
