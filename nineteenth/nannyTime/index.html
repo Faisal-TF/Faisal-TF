@@ -125,6 +125,7 @@
     <title></title>
   </head>
   <body>
+    <audio src="story.mp3" id="storyAudio" preload="auto"></audio>
     <div id="starbg"></div>
     <div id="box"></div>
     <div id="quad"></div>
@@ -138,13 +139,12 @@
     <h2>Happy 19th <br> Baby Peach <3 </h2>
     <h3>Play Me</h3>
     <script type="text/javascript">
-      var audio = new Audio();
-      document.body.addEventListener("touchstart", function() {audio.play()});
+      // var audio = new Audio();
       document.getElementById("box").addEventListener("click", playAudio);
       document.getElementById("box").addEventListener("touchstart", playAudio);
       function playAudio() {
-        audio.src = 'story.mp3';
-        audio.play();
+        // audio.src = 'story.mp3';
+        document.getElementById("storyAudio").play();
       }
     </script>
   </body>
