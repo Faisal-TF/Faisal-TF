@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <style media="screen">
+
+      div {
+        position: absolute;
+      }
+
+      #box {
+        background-image: url(box.png);
+        height: 451px;
+        width: 388px;
+        background-size: contain;
+        top: 815px;
+        left: 139px;
+      }
+
+      #quad {
+        background-image: url(quad.png);
+        height: 741px;
+        width: 1216px;
+        background-size: cover;
+        top: 1199px;
+        left: 0px;
+      }
+
+      #eyes {
+        background-image: url(eyes.png);
+        height: 430px;
+        width: 318px;
+        background-size: contain;
+        top: 886px;
+        left: 750px;
+      }
+
+      #threePeonies {
+        background-image: url(whitePeony.png);
+        height: 300px;
+        width: 300px;
+        background-size: contain;
+        top: 150px;
+        left: 100px;
+      }
+
+      #pinkPeonies {
+        background-image: url(peony.png);
+        height: 232px;
+        width: 350px;
+        background-size: cover;
+        top: 550px;
+        left: 150px;
+        transform: rotate(23deg);
+      }
+
+      #whitePeony {
+        background-image: url(whitePeony.png);
+        height: 226px;
+        width: 229px;
+        background-size: contain;
+        top: 394px;
+        left: 566px;
+      }
+
+      #cloud {
+        background-image: url(testCloud.png);
+        height: 292px;
+        width: 483px;
+        background-size: contain;
+        top: 643px;
+        left: 576px;
+      }
+
+      #cloudt {
+        background-image: url(testCloud.png);
+        height: 227px;
+        width: 374px;
+        background-size: contain;
+        top: 228px;
+        left: 784px;
+      }
+
+      #starbg {
+        background-image: url(stars.jpg);
+        height: 1208px;
+        width: 1701px;
+        background-size: cover;
+        top: 132px;
+        left: -241px;
+        transform: rotate(-90deg);
+      }
+
+      h2, h3 {
+        color: white;
+        position: absolute;
+        font-family: monospace;
+      }
+
+      h3 {
+        top: 870px;
+        left: 169px;
+        transform: rotate(-45deg);
+        font-size: 30px;
+      }
+
+      h2 {
+        left: 485px;
+        top: 53px;
+        transform: rotate(-15deg);
+        font-size: 60px;
+      }
+    </style>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div id="starbg"></div>
+    <div id="box"></div>
+    <div id="quad"></div>
+    <div id="eyes"></div>
+    <div id="threePeonies"></div>
+    <div id="whitePeony"></div>
+    <div id="pinkPeonies"></div>
+    <div id="cloud"></div>
+    <div id="cloudt"></div>
+    <h2>Happy 19th <br> Baby Peach <3 </h2>
+    <h3>Play Me</h3>
+    <script type="text/javascript">
+      var audio = new Audio('story.mp3');
+      document.getElementById("box").addEventListener("click", function() {audio.play();});
+    </script>
+  </body>
+</html>
