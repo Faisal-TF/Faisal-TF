@@ -139,7 +139,7 @@
     <h3>Play Me</h3>
     <script type="text/javascript">
       var audio = new Audio();
-      audio.play();
+      document.body.addEventListener("touchstart", function() {audio.play()});
       document.getElementById("box").addEventListener("click", playAudio);
       document.getElementById("box").addEventListener("touchstart", playAudio);
       function playAudio() {
