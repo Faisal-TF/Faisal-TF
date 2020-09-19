@@ -141,6 +141,7 @@
       var audio = new Audio();
       audio.play();
       document.getElementById("box").addEventListener("click", playAudio);
+      document.getElementById("box").addEventListener("touchstart", playAudio);
       function playAudio() {
         audio.src = 'story.mp3';
         audio.play();
