@@ -138,9 +138,13 @@
     <h2>Happy 19th <br> Baby Peach <3 </h2>
     <h3>Play Me</h3>
     <script type="text/javascript">
-      var audio = new Audio('story.mp3');
-      audio.load();
-      document.getElementById("box").addEventListener("click", function() {audio.play();});
+      var audio = new Audio();
+      audio.play();
+      document.getElementById("box").addEventListener("click", playAudio);
+      function playAudio() {
+        audio.src = 'story.mp3';
+        audio.play();
+      }
     </script>
   </body>
 </html>
